@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import HomePageLayout from "../components/homePageLayout";
 import '../styles/signIn.css';
 import logo from '../assets/logo.png';
 
