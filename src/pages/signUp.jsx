@@ -29,7 +29,7 @@ const SignUp = () => {
                 <button className='buyerButton' onClick={() => handleButtonClick('buyer')}>I am a Buyer</button>
                 <button className='sellerButton' onClick={() => handleButtonClick('seller')}>I am a Seller</button>
             </div>
-            <p>Already have an account? <a href='/Fuel-Exchange/login'>Sign In</a></p>
+            <p>Already have an account? <a href='/Fuel-Exchange/#/login'>Sign In</a></p>
         </div>
         </div>
     );

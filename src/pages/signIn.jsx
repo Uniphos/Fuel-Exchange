@@ -57,7 +57,7 @@ const SignIn = () => {
                         </div>
                         <button type="submit" >Sign In</button>
                     </form>
-                    <p>Don't have an account? <a href="/Fuel-Exchange/signup">Sign Up</a></p>
+                    <p>Don't have an account? <a href="/Fuel-Exchange/#/signup">Sign Up</a></p>
                 </div>
             </div>
             </div>
