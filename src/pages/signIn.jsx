@@ -12,9 +12,11 @@ const SignIn = () => {
         e.preventDefault();
         // Handle sign-in logic here
         if (email === 'buyer@buyer.com' && password === '1234') {
-             window.location.href = '/Fuel-Exchange/#/buyerProfile';
+            window.location.href = '/Fuel-Exchange/#/buyerProfile';
         } else if (email === 'seller@seller.com' && password === '1234') {
-            navigate('/Fuel-Exchange/#/sellerProfile');
+            window.location.href = '/Fuel-Exchange/#/sellerProfile';
+        }else{
+            alert('Invalid Email or Password');
         }
     };
 
