@@ -19,7 +19,7 @@ const SellerNav = ({ setPageOptions }) => {
     };
 
     const handleLogoPress = () => {
-        window.location.href = "/";
+        window.location.href = "/Fuel-Exchange/";
     }
 
     return (

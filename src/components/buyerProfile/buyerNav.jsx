@@ -18,7 +18,7 @@ const ProfileNav = ({ setPageOptions }) => {
     };
 
     const handleLogoPress = () => {
-        window.location.href = "/";
+        window.location.href = "/Fuel-Exchange/";
     }
 
     return (

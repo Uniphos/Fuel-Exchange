@@ -5,9 +5,9 @@ import "../../styles/buyerProfile/buyerSignUp.css";
 const ProfileInfo = ({user}) => {
     const handleButtonClick = () => {
         if (user === "buyer") {
-            window.location.href = "/buyerprofile";
+            window.location.href = "/Fuel-Exchange/#/buyerprofile";
         } else if (user === "seller") {
-            window.location.href = "/sellerprofile";
+            window.location.href = "/Fuel-Exchange/#/sellerprofile";
         }
     }
 
