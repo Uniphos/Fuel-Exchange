@@ -15,12 +15,12 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path='/login' element={<SignIn />} />
-      <Route path='/buyerprofile' element={<BuyerProfile />} />
-      <Route path='/sellerprofile' element={<SellerProfile />} />
-      <Route path='/signup/buyer' element={<BuyerSignUp userType='buyer'/>} />
-      <Route path='/signup/seller' element={<SellerSignUp userType='seller'/>} />
+      <Route path="/Fuel-Exchange/signup" element={<SignUp />} />
+      <Route path='/Fuel-Exchange/login' element={<SignIn />} />
+      <Route path='/Fuel-Exchange/buyerprofile' element={<BuyerProfile />} />
+      <Route path='/Fuel-Exchange/sellerprofile' element={<SellerProfile />} />
+      <Route path='/Fuel-Exchange/signup/buyer' element={<BuyerSignUp userType='buyer'/>} />
+      <Route path='/Fuel-Exchange/signup/seller' element={<SellerSignUp userType='seller'/>} />
     </Routes>
   )
 }
