@@ -4,12 +4,12 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter basename={"/Fuel-Exchange/"}>
       <Routes>
         <Route path="*" element={<App />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>,
+  </React.StrictMode>,
 )
