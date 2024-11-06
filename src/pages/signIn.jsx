@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import HomePageLayout from "../components/homePageLayout";
 import '../styles/signIn.css';
 import logo from '../assets/logo.png';
@@ -11,9 +12,9 @@ const SignIn = () => {
         e.preventDefault();
         // Handle sign-in logic here
         if (email === 'buyer@buyer.com' && password === '1234') {
-            window.location.href = '/Fuel-Exchange/buyerProfile';
+            navigate('/Fuel-Exchange/buyerProfile');
         } else if (email === 'seller@seller.com' && password === '1234') {
-            window.location.href = '/Fuel-Exchange/sellerProfile';
+            navigate('/Fuel-Exchange/sellerProfile');
         }
     };
 
