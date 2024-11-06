@@ -1,0 +1,108 @@
+.mainAnalytics{
+    display: flex;
+    width: 60%;
+    margin-left: 20%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.graph{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.orderHistoryContainer {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.orderHistory {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.orderHistory:last-child {
+    border-bottom: none;
+}
+
+.orderTopInfo{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.orderTopInfo p {
+    margin: 5px; /* Removes the margin between the paragraphs */
+    padding: 0; /* Removes the padding between the paragraphs */
+}
+
+.orderInfo {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    width: 35%; /* Ensure it takes the full width of the container */
+    justify-content: space-between;
+}
+
+.orderInfo p {
+    margin: 5px; /* Removes the margin between the paragraphs */
+    padding: 0; /* Removes the padding between the paragraphs */
+}
+
+.expandBtn{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 35px;
+}
+
+.orderBottomInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.additionalInfo{
+    background-color: rgb(194, 194, 194);
+    padding: 5px;
+    border-radius: 20px;
+    padding-left: 30px;
+    margin-top: 20px;
+}
+
+.Completed{
+    width: 125px;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.Pending{
+    width: 125px;
+    background-color: rgb(207, 207, 40);
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+
+.Cancelled{
+    width: 125px;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.Negotiating{
+    width: 125px;
+    background-color: rgb(71, 159, 231);
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}

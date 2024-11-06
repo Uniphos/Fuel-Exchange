@@ -1,0 +1,50 @@
+nav {
+    width: 98%; /* Adjust as needed */
+    margin: 0 auto;
+    position: fixed;
+    top: 0%;
+    /*left: 1%; /* Adjust as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: rgb(255, 255, 255);
+    height: 7%;
+    z-index: 10000;
+    padding-top: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 10px; /* Adjust spacing between links as needed */
+}
+
+.Icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Allow the logo container to grow and take available space */
+    height: 100%; /* Ensure the logo container takes the full height of the navbar */
+}
+
+.Icon img {
+    max-height: 65%; /* Ensure the image takes the full height of the container */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.login-button {
+    padding: 0px 20px; /* Adjust padding as needed */
+    background-color: #007BFF; /* Adjust background color as needed */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.authentication{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0.25%;
+}

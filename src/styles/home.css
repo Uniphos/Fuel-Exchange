@@ -1,0 +1,54 @@
+.mainPage {
+    position: relative; /* Changed from absolute to relative */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%; /* Span across the whole width */
+    height: 100vh; /* Span across the whole height of the viewport */
+    margin: 0; /* Remove margin */
+    top: 0; /* Adjust top to 0 to start from the top of the viewport */
+    z-index: 0;
+}
+
+.img1 {
+    display: flex; /* Changed from flex to block */
+    width: 100%; /* Span across the whole width */
+    height: 100%; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+    margin: 0; /* Remove margin */
+    margin-top: -15%;
+}
+
+.missionStatement{
+    text-align: center;
+    font-size: 25px;
+}
+
+.mainText{
+    font-size: 30px;
+}
+
+blue{
+    color: blue;
+}
+
+.missionContainer {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    width: 100%;
+    gap: 40px;
+}
+
+.mission {
+    text-align: center;
+}
+
+.handShake{
+    width: 100%;
+}
+
+.process{
+    text-align: center;
+    font-size: 25px;
+}

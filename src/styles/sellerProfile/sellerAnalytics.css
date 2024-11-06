@@ -1,0 +1,38 @@
+.analyticsTop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+
+.topAnalytics{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+.topAnalytics h1{
+    color: rgb(22, 115, 189);
+}
+
+.topItem{
+    padding-left: 0px;
+    padding-right : 80px;
+    border-right: 3px solid rgb(151, 151, 151);
+}
+
+.topItem:first-child{
+    padding-left: 30px;
+}
+
+.topItem:last-child{
+    border-right: none;
+    padding-right: 50px;
+}

@@ -1,0 +1,52 @@
+.signUpPage {
+    width: 100vw;
+    height: 100vh; /* Ensure it takes the full viewport height */
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    background-image: url('https://wallpapersmug.com/download/1920x1080/1771ed/triangles-blue-abstract.jpg');
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    color: white;
+}
+.topBar {
+    background-color: white;
+    width: 100%;
+    padding: 5px;
+    
+}
+.signUp {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    margin-top: 10%;
+    z-index: 1;
+    gap: 20px;
+}
+.signUpButtons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.signUpButtons button {
+    width: 150px;
+    height: 40px;
+    border: 0px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: #007BFF;
+}
+
+.logo {
+    width: 20%;
+    margin-left: 40%;
+}
+.logo:hover {
+    cursor: pointer;
+}

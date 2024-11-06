@@ -1,0 +1,110 @@
+.oilInfo{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.topInfo{
+    background-color: rgb(49, 90, 204);
+    display: flex;
+    width: 100%;
+    height: 400px;
+    color: rgb(255, 255, 255);
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 50px;
+}
+
+.infoRow h1 {
+    color: white;
+}
+
+.infoRow{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 30px;
+}
+
+.topInfo p{
+    font-size: 35px;
+}
+
+.startOrder{
+    display: flex;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    width: 200px;
+    height: 65px;
+    font-size: 35px;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    background-color: white; /* Change this to your desired background color */
+    color: rgb(49, 90, 204); /* Change this to your desired text color */
+    border-radius: 25px;
+}
+
+.startOrder button {
+    font-size: 16px; /* Change this to your desired text size */
+    text-align: center; /* Align the text to the center */
+    display: flex;
+
+}
+
+.bottomInfo {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto; /* Center it horizontally */
+    gap: 20px;
+}
+
+.infoDiscrp{
+    background-color: white;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+.orderDis{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+
+
+.order{
+    background-color: white;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+.orderDis select{
+    width: 200px;
+    height: 40px;
+    background-color: rgb(212, 212, 212);
+    color: black;
+    border-radius: 20px;
+}
+.orderDis select:hover {
+    outline: none;
+    border: 1px solid transparent; /* Add this line to remove the border on hover */
+}
+
+.orderDis input{
+    width: 200px;
+    height: 40px;
+    background-color: rgb(212, 212, 212);
+    color: black;
+}
+
+.orderDis{
+    padding:10px;
+}

@@ -1,0 +1,113 @@
+.ChatOp {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.chatList {
+    width: 300px;
+    height: 100vh; /* Ensure it takes the full viewport height */
+    display: flex;
+    position: fixed; /* Make it fixed */
+    top: 1; /* Align it to the top */
+    left: 1; /* Align it to the left */
+    color: rgb(0, 0, 0);
+    background-color: rgb(189, 189, 189);
+    border-radius: 9px 0px 0px 0px;
+    border-right: 3px solid black;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.chatBox {
+    width: calc(100% - 300px); /* Adjust width to account for the fixed chatList */
+    height: 100vh;
+    margin-left: 300px; /* Add margin to avoid overlap with chatList */
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    
+    background-color: white;
+
+}
+
+
+.User {
+    display: flex;
+    align-self:flex-end;
+    flex-direction: column;
+    padding-left: 10%;
+    max-width: 40%;
+    margin-right: 10%;
+}
+
+.User p {
+    margin: 0;
+    background-color: rgb(22, 115, 189);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.User h5 {
+    display: flex;
+    margin: 0;
+    background-color: transparent;
+    justify-content: flex-end;
+}
+
+.Admin {
+    display: flex;
+    align-self: flex-start;
+    padding-left: 10%;
+    flex-direction: column;
+    max-width: 40%;
+}
+
+.Admin p {
+    margin: 0;
+    background-color: #e4e4e4;
+    padding: 10px;
+    border-radius: 10px;
+}
+.Admin h5 {
+    margin: 0;
+    background-color: transparent;
+}
+.chatLog {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    background-color: white;
+    padding-bottom: 5%;
+}
+
+.chatInput {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 130px;
+    width: 65%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    background-color: white;
+}
+
+.chatInput input {
+    background-color: rgb(196, 196, 196);
+    color: black;
+}
+
+.formChat {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: flex-start;
+}

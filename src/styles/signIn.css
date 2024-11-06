@@ -1,0 +1,51 @@
+.signInPage{
+    width: 100vw;
+    height: 100vh; /* Ensure it takes the full viewport height */
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    background-image: url('https://wallpapersmug.com/download/1920x1080/1771ed/triangles-blue-abstract.jpg');
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    color: rgb(0, 0, 0);
+}
+
+.topBar {
+    background-color: white;
+    width: 100%;
+    
+}
+
+.centerText{
+    text-align: center;
+}
+
+.signInContainer {
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 10%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 15%;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    text-align: flex-start;
+    z-index: 1;
+    gap: 20px;
+}
+
+.container input{
+    background-color: rgb(158, 158, 158);
+    color: rgb(0, 0, 0);
+}

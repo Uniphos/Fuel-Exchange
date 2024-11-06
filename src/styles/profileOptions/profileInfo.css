@@ -1,0 +1,43 @@
+.mainProfile{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.mainProfile p{
+    background-color: rgb(196, 196, 196);
+    color: rgb(82, 82, 82);
+    padding: 0px;
+    padding-left: 10px;
+    margin: 0px;
+    width: 400px;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    border-radius: 5px;
+}
+.mainProfile h4{
+    color: rgb(75, 75, 75);
+}
+.entryInfo{
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.corpInfo{
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.bankInfo{
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}

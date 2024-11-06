@@ -1,0 +1,51 @@
+.corporateInfo {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.textInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+.textInfo input[type="text"] {
+    width: 100%;
+    background-color: rgb(212, 212, 212);
+    color: black;
+    border-radius: 20px;
+}
+.addImage{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.entryInfo input[type="text"] {
+    width: 50%;
+    background-color: rgb(212, 212, 212);
+    color: black;
+    border-radius: 20px;
+}
+
+.bankInfo input[type="text"] {
+    width: 50%;
+    background-color: rgb(212, 212, 212);
+    color: black;
+    border-radius: 20px;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px 40px 0px;
+}
