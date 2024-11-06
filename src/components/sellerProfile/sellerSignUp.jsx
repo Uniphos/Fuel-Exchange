@@ -13,7 +13,7 @@ import SignUpBox from "../../components/profileOptions/signUpBox";
 
 const ProfileNav = ({userType}) => {
     const handleLogoPress = () => {
-        window.location.href = "/";
+        window.location.href = "/Fuel-Exchange/";
         }
 
     return (

@@ -7,9 +7,9 @@ const SignUp = () => {
 
     const handleButtonClick = (page) => {
         if (page === 'buyer') {
-            window.location.href = '/Fuel-Exchange/signup/buyer/';
+            window.location.href = '/Fuel-Exchange/#/signup/buyer/';
         } else if (page === 'seller') {
-            window.location.href = '/Fuel-Exchange/signup/seller/';
+            window.location.href = '/Fuel-Exchange/#/signup/seller/';
         }
     }
 
