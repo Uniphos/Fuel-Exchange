@@ -26,6 +26,9 @@
     gap: 20px;
     margin-bottom: 20px;
 }
+.otherDetailsForm{
+    width: 40%;
+}
 
 .addBtn{
     width: 100%;

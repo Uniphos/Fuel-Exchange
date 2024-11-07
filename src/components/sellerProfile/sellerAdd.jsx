@@ -23,7 +23,7 @@ const SellerHome = () => {
             </div>
 
             <div className='otherDetails'>
-                <form>
+                <form className='otherDetailsForm'>
                     <label>Max Quantity:</label>
                     <input type="text" name="maxQuantity"/>
                     <label>Min Quantity:</label>
