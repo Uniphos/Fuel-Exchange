@@ -15,11 +15,6 @@ nav {
     padding-right: 1%;
 }
 
-.navbar-links {
-    display: flex;
-    gap: 10px; /* Adjust spacing between links as needed */
-}
-
 .Icon {
     display: flex;
     justify-content: center;

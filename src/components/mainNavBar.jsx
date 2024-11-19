@@ -6,11 +6,6 @@ import logo from '../assets/logo.png'; // Removed extra space
 const MainNavBar = () => {
     return (
         <nav className="navbar">
-            <div className="navbar-links">
-                <Link to="/">Home</Link>
-                <Link to="/services">How it Works</Link>
-                <Link to="/about">About Us</Link>
-            </div>
             <div className="Icon">
                 <img src={logo} alt="Logo" />
             </div>

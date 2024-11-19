@@ -15,8 +15,8 @@ const Home = () => {
                     alt='oil field' className='img1'/>
                     <div className='missionStatement'>
                         <p>Our Mission:</p>
-                        <p className='mainText'><b>With over 25 years of experience in oil and gas <blue>The Fuel Exchange</blue> <br/> 
-                        is dedicated to facilitating the selling and buying of large<br/>
+                        <p className='mainText'><b>With over 25 years of experience in oil and gas <span className='blue'>The Fuel Exchange</span>  
+                        is dedicated to facilitating the selling and buying of large
                         quantities of fuels. Our Services:</b></p>
                         <div className='missionContainer'>
                             <div className='mission'>
