@@ -1,6 +1,5 @@
-nav {
-    width: 98%; /* Adjust as needed */
-    margin: 0 auto;
+.navbar {
+    width: 100vw; /* Adjust as needed */;
     position: fixed;
     top: 0%;
     /*left: 1%; /* Adjust as needed */
@@ -21,11 +20,19 @@ nav {
     align-items: center;
     flex-grow: 1; /* Allow the logo container to grow and take available space */
     height: 100%; /* Ensure the logo container takes the full height of the navbar */
+    margin-left: 15%; /* Adjust margin as needed */
 }
 
 .Icon img {
     max-height: 65%; /* Ensure the image takes the full height of the container */
     width: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .Icon img {
+        max-width: 100%; /* Ensure the image takes the full width of the container on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
 
 .login-button {
@@ -38,8 +45,34 @@ nav {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .login-button {
+        padding: 0px 10px; /* Adjust padding as needed */
+        margin: 0px 20px 0px 10px; /* Adjust margin as needed */
+        width: 65%;
+        background-color: #007BFF; /* Adjust background color as needed */
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 15px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .login-button:last-child {
+        margin-bottom: 0%;
+    }
+}
+
 .authentication{
     display: flex;
     gap: 10px;
     margin-bottom: 0.25%;
+    margin-right: 2%;
+}
+
+@media (max-width: 768px) {
+    .authentication {
+        display: flex;
+        flex-direction: column;
+    }
 }

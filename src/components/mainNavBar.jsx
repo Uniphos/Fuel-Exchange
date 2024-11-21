@@ -10,8 +10,8 @@ const MainNavBar = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <div className='authentication'>
-            <Link to="/signup" className="login-button">Sign Up</Link>
-            <Link to="/login" className="login-button">Login</Link> {/* Styled as a button */}
+                <Link to="/signup" className="login-button">Sign Up</Link>
+                <Link to="/login" className="login-button">Login</Link> {/* Styled as a button */}
             </div>
         </nav>
     );

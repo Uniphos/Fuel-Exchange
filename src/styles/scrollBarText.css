@@ -10,6 +10,12 @@
     z-index: 1000;
 }
 
+@media (max-width: 768px) {
+    .scrolling-text-bar {
+        top: 7.2%;
+    }
+}
+
 .scrolling-text {
     display: flex;
     white-space: nowrap;
@@ -35,5 +41,16 @@
     }
     100% {
         transform: translateX(-65%);
+    }
+}
+
+@media (max-width: 768px) {
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%)
+        }
+        100% {
+            transform: translateX(-350%);
+        }
     }
 }
