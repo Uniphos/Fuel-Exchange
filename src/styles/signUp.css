@@ -42,11 +42,26 @@
     border-radius: 5px;
     color: #007BFF;
 }
+@media (max-width: 600px) {
+    .signUp {
+        width: 70%;
+    }
+}
 
 .logo {
     width: 20%;
     margin-left: 40%;
 }
+@media (max-width: 600px) {
+    .logo {
+        width: 70%;
+        margin-left: 15%;
+    }
+}
 .logo:hover {
     cursor: pointer;
+}
+
+.change {
+    color: #0461c4;
 }
