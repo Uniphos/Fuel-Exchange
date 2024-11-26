@@ -5,6 +5,15 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+@media (max-width: 768px) {
+    .mainAnalytics{
+        display: flex;
+        width: 90%;
+        margin-left: 5%;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
 
 .graph{
     display: flex;

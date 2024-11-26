@@ -9,6 +9,12 @@
 
     
 }
+@media (max-width: 768px) {
+    .mainProfile{
+        width: 90%;
+        margin-left: 5%;
+    }
+}
 
 .mainProfile p{
     background-color: rgb(196, 196, 196);
@@ -21,6 +27,11 @@
     align-items: center;
     display: flex;
     border-radius: 5px;
+}
+@media (max-width: 768px) {
+    .mainProfile p{
+        width: 95%;
+    }
 }
 .mainProfile h4{
     color: rgb(75, 75, 75);
