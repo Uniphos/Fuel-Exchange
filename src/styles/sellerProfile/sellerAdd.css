@@ -53,7 +53,6 @@
     flex-direction: column;
     width: 40%;
 }
-
 .addListing input{
     background-color: rgb(204, 204, 204);
     color: rgb(31, 31, 31);
@@ -68,4 +67,15 @@
 }
 .otherDetails input{
     width: 40%;
+}
+@media(max-width: 768px){
+    .formItems{
+        width: 100%;
+    }
+    .otherDetails input{
+        width: 100%;
+    }
+    .otherDetailsForm{
+        width: 100%;
+    }
 }

@@ -18,6 +18,18 @@
     padding-bottom: 20px;
     color: white;
 }
+.tableHolder{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+@media(max-width: 768px){
+    .tableHolder{
+        flex-direction: column;
+    }
+}
 
 .positive {
     color: rgb(0, 255, 0);
@@ -28,7 +40,7 @@
 }
 
 .marketTable{
-    width: 80%;
+    width: 100%;
 }
 
 .orders{
@@ -38,6 +50,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
 .orderTable {
     width: 100%;
     background-color: white;
@@ -58,7 +71,54 @@
 .orderRows:last-child {
     border-bottom: none;
 }
-
+@media(max-width: 768px){
+    .orders{
+        width: 85%;
+        margin-left: 1.8%;
+    }
+    .orderRows {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 8%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 3px solid rgb(163, 163, 163);
+    }
+    .orders .Completed{
+        width: 90px;
+        background-color: green;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+    }
+    
+    .orders .Pending{
+        width: 90px;
+        background-color: rgb(207, 207, 40);
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+    }
+    
+    
+    .orders .Cancelled{
+        width: 90px;
+        background-color: red;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+    }
+    
+    .orders .Negotiating{
+        width: 90px;
+        background-color: rgb(71, 159, 231);
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+    }
+}
 
 .infoContainer{
     width: 60%;
@@ -69,12 +129,26 @@
     gap: 80px;
     padding-bottom: 30px;
 }
+@media(max-width: 768px){
+    .infoContainer{
+        width: 85%;
+        margin-left: 2%;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+}
 
 .inbox{
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+@media(max-width: 768px){
+    .inbox{
+        width: 100%;
+    }
 }
 
 .inboxTable{
@@ -102,7 +176,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
 
+@media(max-width: 768px){   
+    .earnings{
+        width: 100%;
+    }
 }
 
 .earningsTable{

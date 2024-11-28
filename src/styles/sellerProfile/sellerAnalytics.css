@@ -36,3 +36,28 @@
     border-right: none;
     padding-right: 50px;
 }
+
+@media(max-width: 768px){
+    .analyticsTop{
+        margin-left: 3%;
+    }
+    .topAnalytics{
+        width: 80%;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .topItem{
+        padding-left: 0px;
+        padding-right : 0px;
+        border-right: none;
+        border-bottom: 3px solid rgb(151, 151, 151);
+    }
+    .topItem:first-child{
+        padding-left: 0px;
+    }
+    .topItem:last-child{
+        border-right: none;
+        padding-right: 0px;
+        border-bottom: 0;
+    }
+}

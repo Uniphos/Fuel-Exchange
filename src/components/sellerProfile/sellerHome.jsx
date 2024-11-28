@@ -21,42 +21,56 @@ const SellerHome = () => {
         <div className='sellerHome'>
             <div className='marketValue'>
                 <h4>Market Value</h4>
-                <table className='marketTable'>
-                    <tbody>
-                        <tr>
-                            <td>Jet A10</td>
-                            <td>Price</td>
-                            <td className='positive'>+1.27</td>
-                            <td>Jet A10</td>
-                            <td>Price</td>
-                            <td className='positive'>+1.27</td>
-                        </tr>
-                        <tr>
-                            <td>EN590</td>
-                            <td>Price</td>
-                            <td className='negative'>-0.46</td>
-                            <td>EN590</td>
-                            <td>Price</td>
-                            <td className='negative'>-0.46</td>
-                        </tr>
-                        <tr>
-                            <td>D6</td>
-                            <td>Price</td>
-                            <td className='positive'>+1.27</td>
-                            <td>D6</td>
-                            <td>Price</td>
-                            <td className='positive'>+1.27</td>
-                        </tr>
-                        <tr>
-                            <td>Jet A10</td>
-                            <td>Price</td>
-                            <td className='negative'>-0.46</td>
-                            <td>Jet A10</td>
-                            <td>Price</td>
-                            <td className='negative'>-0.46</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className='tableHolder'>
+                    <table className='marketTable'>
+                        <tbody>
+                            <tr>
+                                <td>Jet A10</td>
+                                <td>Price</td>
+                                <td className='positive'>+1.27</td>
+                            </tr>
+                            <tr>
+                                <td>EN590</td>
+                                <td>Price</td>
+                                <td className='negative'>-0.46</td>
+                            </tr>
+                            <tr>
+                                <td>D6</td>
+                                <td>Price</td>
+                                <td className='positive'>+1.27</td>
+                            </tr>
+                            <tr>
+                                <td>Jet A10</td>
+                                <td>Price</td>
+                                <td className='negative'>-0.46</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className='marketTable'>
+                        <tbody>
+                            <tr>
+                                <td>Jet A10</td>
+                                <td>Price</td>
+                                <td className='positive'>+1.27</td>
+                            </tr>
+                            <tr>
+                                <td>EN590</td>
+                                <td>Price</td>
+                                <td className='negative'>-0.46</td>
+                            </tr>
+                            <tr>
+                                <td>D6</td>
+                                <td>Price</td>
+                                <td className='positive'>+1.27</td>
+                            </tr>
+                            <tr>
+                                <td>Jet A10</td>
+                                <td>Price</td>
+                                <td className='negative'>-0.46</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div className='orders'>
                 <h4>Manage orders</h4>
