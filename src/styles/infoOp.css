@@ -32,6 +32,18 @@
 .topInfo p{
     font-size: 35px;
 }
+@media (max-width: 768px) {
+    .topInfo{
+        height: 100%;
+        padding: 0px;
+        flex-direction: column;
+        padding-bottom: 10px;
+        padding-left: 10PX;
+    }
+    .topInfo p{
+        font-size: 25px;
+    }
+}
 
 .startOrder{
     display: flex;
@@ -46,6 +58,15 @@
     background-color: white; /* Change this to your desired background color */
     color: rgb(49, 90, 204); /* Change this to your desired text color */
     border-radius: 25px;
+}
+@media (max-width: 768px) {
+    .startOrder{
+        display: flex;
+        position:relative;
+        top: 0%;
+        right: 0%; 
+        justify-content: flex-start;
+    }
 }
 
 .startOrder button {
@@ -78,8 +99,6 @@
     gap: 50px;
 }
 
-
-
 .order{
     background-color: white;
     padding-left: 10px;
@@ -98,11 +117,19 @@
     border: 1px solid transparent; /* Add this line to remove the border on hover */
 }
 
-.orderDis input{
+.orderDis input[type="text"]{
     width: 200px;
     height: 40px;
     background-color: rgb(212, 212, 212);
     color: black;
+}
+@media (max-width: 768px) {
+    .orderDis{
+        flex-direction: column;
+    }
+    .orderDis input[type="text"]{
+        width: 90%;
+    }
 }
 
 .orderDis{

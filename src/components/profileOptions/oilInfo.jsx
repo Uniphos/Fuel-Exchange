@@ -12,7 +12,7 @@ const InfoOp = ({ Id }) => {
     return (
         <div className="oilInfo">
             <div className="topInfo">
-                <div >
+                <div>
                     <div className="infoRow">
                         <h1>JET A1:</h1> 
                         <p>Platts +12</p>
