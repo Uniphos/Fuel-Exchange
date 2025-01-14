@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HomePageLayout from "../components/homePageLayout";
 import ScrollingTextBar from "../components/scrollBarText";
 import "../styles/home.css"
 import PImage from '../assets/negotiation.png'
-
 
 const Home = () => {
     return (

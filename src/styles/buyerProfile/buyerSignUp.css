@@ -31,6 +31,8 @@
     background-color: rgb(212, 212, 212);
     color: black;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 .bankInfo input[type="text"] {
@@ -38,6 +40,8 @@
     background-color: rgb(212, 212, 212);
     color: black;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 .button{

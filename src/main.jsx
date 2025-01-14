@@ -6,11 +6,15 @@ import { HashRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ApolloProvider } from '@apollo/client';
+import client from './components/AWSdatabase.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <ApolloProvider client={client}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </ApolloProvider>
   </React.StrictMode>,
 )

@@ -5,10 +5,9 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import SignUp from './pages/signUp'
 import SignIn from './pages/signIn'
-import BuyerProfile from './pages/buyerProfile'
-import SellerProfile from './pages/sellerProfile'
-import BuyerSignUp from './components/buyerProfile/buyerSignUp'
-import SellerSignUp from './components/sellerProfile/sellerSignup'
+import Profile from './pages/Profile'
+import ProfileSignUp from './components/profileOptions/profileSignUp'
+
 
 
 function App() {
@@ -17,10 +16,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path='/login' element={<SignIn />} />
-      <Route path='/buyerprofile' element={<BuyerProfile />} />
-      <Route path='/sellerprofile' element={<SellerProfile />} />
-      <Route path='/signup/buyer' element={<BuyerSignUp userType='buyer'/>} />
-      <Route path='/signup/seller' element={<SellerSignUp userType='seller'/>} />
+      <Route path="/profile/:id" element={<Profile />} />
+      <Route path="/profileSignUp/:id" element={<ProfileSignUp />} />
     </Routes>
   )
 }

@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import '../../styles/sellerProfile/sellerAnalytics.css';
 import '../../styles/buyerProfile/buyerAnalytics.css';
+import { useMutation, useQuery, gql } from '@apollo/client';
+import { supabase } from '../supaBaseClient';
+import client from '../AWSdatabase'
 
-// Register the necessary components
+const GET_USER_TYPE = gql`
+  query getUserType($email: String!) {
+    account_information(where: { email: { _eq: $email } }) {
+      account_type
+    }
+  }
+`;
+
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const BuyerAnalytics = () => {
+const SellerHome = () => {
     const sections = [
         { title: 'Orders 1', status: 'Completed', quantity: '23mt', date:'11/5/24', price:'$3456', port: 'port name & location', estDate: '99/99/99', quality: 'Fuel Quality goes here', info: 'Transaction info here'},
         { title: 'Orders 2', status: 'Pending', quantity: '23mt', date:'11/5/24', price:'$3456', port: 'port name & location', estDate: '99/99/99', quality: 'Fuel Quality goes here', info: 'Transaction info here'},
@@ -15,7 +26,28 @@ const BuyerAnalytics = () => {
         { title: 'Orders 5', status: 'Completed', quantity: '23mt', date:'11/5/24', price:'$3456', port: 'port name & location', estDate: '99/99/99', quality: 'Fuel Quality goes here', info: 'Transaction info here'},
     ];
 
+    const getEmail = async () => {
+        const { data: { session } } = await supabase.auth.getSession();
+        return session. user.email;
+    };
+
+    useEffect(() => {
+        const fetchUserType = async () => {
+            const email = await getEmail();
+            if (email) {
+                const result = await client.query({
+                    query: GET_USER_TYPE,
+                    variables: { email }
+                });
+                setUserType(result.data.account_information[0].account_type);
+            }
+        };
+        fetchUserType();
+    }, []);
+
     const [expandedSections, setExpandedSections] = useState(Array(sections.length).fill(false));
+
+    const [userType, setUserType] = useState("buyer");
 
     const toggleExpand = (index) => {
         setExpandedSections(prevState => {
@@ -66,9 +98,32 @@ const BuyerAnalytics = () => {
     };
 
     return (
+        
         <div className='mainAnalytics'>
+            { userType == "seller" ?
+            <div className='analyticsTop'>
+                <p>Analytics</p>
+                <div className='topAnalytics'>
+                    <div className='topItem'>
+                        <p>Earning to date</p>
+                        <h1>$</h1>  
+                    </div>
+                    <div className='topItem'>
+                        <p>Order completion</p>
+                        <h1>%</h1>
+                    </div>
+                    <div className='topItem'>
+                        <p>Order completed</p>
+                        <h1>#</h1>
+                    </div>
+                    <div className='topItem'>
+                        <p>Order pending</p>
+                        <h1>#</h1>
+                    </div>
+                </div>
+            </div> : null }
             <div className='boughtGraph'>
-                <p>Fuel Bought</p>
+                <p>Earnings</p>
                 <div className='graph'>
                     <Bar
                         data={data}
@@ -113,4 +168,4 @@ const BuyerAnalytics = () => {
     );
 };
 
-export default BuyerAnalytics;
+export default SellerHome;

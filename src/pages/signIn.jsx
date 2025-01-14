@@ -1,27 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/signIn.css';
 import logo from '../assets/logo.png';
+import { supabase } from '../components/supaBaseClient';
+import { useMutation, useQuery, gql } from '@apollo/client';
+import client from '../components/AWSdatabase'
+
+const GET_ID = gql`
+  query getID($email: String!) {
+    account_information(where: { email: { _eq: $email } }) {
+      user_id
+    }
+  }
+`;
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle sign-in logic here
-        if (email === 'buyer@buyer.com' && password === '1234') {
-            window.location.href = '/Fuel-Exchange/#/buyerProfile';
-        } else if (email === 'seller@seller.com' && password === '1234') {
-            window.location.href = '/Fuel-Exchange/#/sellerProfile';
-        }else{
-            alert('Invalid Email or Password');
-        }
-    };
+    useEffect(() => {
+        
+        getSession();
+    }, []);
 
+    const getSession = async () => {
+        const { data: { session } } = await supabase.auth.getSession();
+        console.log(session.user.email);
+    };
     const getClick = () =>{
         window.location = '/Fuel-Exchange/';
     }
 
+    const login  = async () => {
+        try {
+        await supabase.auth.signInWithPassword({
+            email: email,
+            password: password
+        })
+        } catch (error) {
+            alert('Invalid Email or Password');
+        }
+    }
+
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        // Handle sign-in logic here
+        login();
+        
+        const userIdResult = await client.query({
+            query: GET_ID,
+            variables: { email: email },
+          });
+
+        window.location.href = '/Fuel-Exchange/#/profile/' + userIdResult.data.account_information[0].user_id;
+        
+    };
+        
 
     return (
         <div className="signInPage">

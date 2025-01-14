@@ -1,13 +1,42 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../styles/buyerProfile/buyerHome.css";
+import { supabase } from '../supaBaseClient';
+import client from '../AWSdatabase'
+import { useMutation, useQuery, gql } from '@apollo/client';
 
+const GET_POSTS = gql`
+    query MyQuery {
+      posting_list {
+        fuel_name
+        trial_amount
+        contract
+        origin
+        posting_list_id
+      }
+    }
+`;
 const HomeOp = ({ setPageOptions, setIDOption }) => {
 
+    const [posts, setPosts] = useState([]);
+
+    const fetchPosts = async () => {
+        const result = await client.query({
+            query: GET_POSTS
+        });
+        setPosts(result.data.posting_list);
+    };
+
+    useEffect(() => {
+        fetchPosts();
+    }, []);
+
     const handleClick = (event) => {
+        console.log(event.currentTarget.id);
         const id = event.currentTarget.id;
-        setPageOptions("info");
         setIDOption(id);
+        setPageOptions("info");
+
     };
 
     return (
@@ -17,29 +46,16 @@ const HomeOp = ({ setPageOptions, setIDOption }) => {
                 <input type="submit" value="filter" className="filterBtn"/>
             </form>
             <div className="homeOpContainer">
-                <div className="homeOpItem" id="JET A1" onClick={handleClick}>
-                    <h1>JET A1</h1> <br/>
-                    <div className="description">
-                        <p>Contract: 2mil bbl x 12mo</p>
-                        <p>Trial amount: 200k bbl </p>
-                        <p>Origin: US Gulf Coast </p>
+                {posts.map((post, index) => (
+                    <div className="homeOpItem" key={index} id={post.posting_list_id} onClick={handleClick}>
+                        <h1>{post.fuel_name}</h1>
+                        <div className="description">
+                            <p>Contract: {post.contract}</p>
+                            <p>Trial amount: {post.trial_amount}</p>
+                            <p>Origin: {post.origin}</p>
+                        </div>
                     </div>
-                </div>
-                <div className="homeOpItem" id="placeholder1" onClick={handleClick}>
-                    <h1>placeholder</h1>   
-                </div>
-                <div className="homeOpItem" id="placeholder2" onClick={handleClick}>
-                    <h1>placeholder</h1>   
-                </div>
-                <div className="homeOpItem" id="placeholder3" onClick={handleClick}>
-                    <h1>placeholder</h1>   
-                </div>
-                <div className="homeOpItem" id="placeholder4" onClick={handleClick}>
-                    <h1>placeholder</h1>   
-                </div>
-                <div className="homeOpItem" id="placeholder5" onClick={handleClick}>
-                    <h1>placeholder</h1>   
-                </div>
+                ))}
             </div>
         </div>
     );

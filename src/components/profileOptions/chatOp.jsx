@@ -1,73 +1,91 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Chat, Channel, ChannelList, MessageList, MessageInput, Window } from "stream-chat-react";
+import 'stream-chat-react/dist/css/v2/index.css'
+import streamClient from '../chatClient';
+import client from '../AWSdatabase'
 import "../../styles/profileOptions/chatOp.css";
+import { useParams } from "react-router-dom";
+import { gql } from '@apollo/client';
 
-const ChatOp = () => {
-    const [chatLog, setChatLog] = useState([
-        { sender: "User", message: "Hello I would like to inquire about the Jet A1 fuel and the contents inside of it aswell as the earliest time I can get it."},
-        { sender: "Admin", message: "Hello, the Jet A1 fuel is a type of aviation fuel that is used in aircrafts. It is a clear to straw-colored fuel, based on highly refined kerosene, which is used in jet engines." },
-        { sender: "Admin", message: "The earliest time you can get it is 2 days from now." },
-        { sender: "User", message: "Thank you. I have a couple of questions."},
-        { sender: "User", message: "What is the quality of the Jet A1 fuel?" },
-        { sender: "User", message: "aswell as what port does the Jet A1 fuel originate from?" },
-        { sender: "User", message: "I would like to start a transaction with you, after this information is provided" },
-        { sender: "Admin", message: "The Jet A1 fuel is of high quality and is used in aircrafts. It is a clear to straw-colored fuel, based on highly refined kerosene, which is used in jet engines." },
-        { sender: "Admin", message: "The Jet A1 fuel originates from the port of Rotterdam." },
-    ]);
+const GET_INFO = gql`
+    query obtainInfo($_eq: uuid!) {
+        account_information(where: {user_id: {_eq: $_eq}}) {
+        email
+        username
+    }
+}
+`;
 
-    const [newMessage, setNewMessage] = useState("");
-    const chatLogRef = useRef(null);
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-        if (newMessage.trim() !== "") {
-            addMessageToChatLog("User", newMessage);
-            setNewMessage("");
-        }
+function App() {
+  const [chatClient, setChatClient] = useState(null);
+  const { id } = useParams();
+
+  const getData = async () => {
+    const result = await client.query({
+      query: GET_INFO,
+      variables: { _eq: id },
+    });
+    console.log(result.data.account_information[0]);
+    return result.data.account_information[0];
+  };
+
+  useEffect(() => {
+
+    const connectUser = async () => {
+    
+      try{
+        const data = await getData();
+        await streamClient.connectUser(
+          {
+            id: id,
+            name: data.email,
+          },
+          streamClient.devToken(id) // Replace with a real token in production
+        );
+
+        setChatClient(streamClient);
+      } catch (error) {
+        console.error(error);
+      }
+
+      
     };
 
-    const addMessageToChatLog = (sender, message) => {
-        setChatLog((prevChatLog) => [...prevChatLog, { sender, message }]);
-    };
+    connectUser();
+    console.log(streamClient);
+    // Cleanup
+    return () => chatClient?.disconnectUser();
+  }, []);
 
-    useEffect(() => {
-        if (chatLogRef.current) {
-            chatLogRef.current.scrollTop = chatLogRef.current.scrollHeight;
-        }
-    }, [chatLog]);
+  if (!chatClient) return <div>Loading...</div>;
 
-    return (
-        <div className="ChatOp">
-            <div className="chatList">
-                <p>John doe oil</p>
+  return (
+    <div className="chat-container">
+        <Chat client={chatClient} theme="messaging light">
+          <div className="app-container">
+            {/* Sidebar with the ChannelList */}
+            <div className="channel-list-container">
+              <ChannelList
+                filters={{ type: "messaging", members: { $in: [id] } }}
+                sort={{ last_message_at: -1 }}
+                options={{ limit: 20 }}
+              />
             </div>
-            <div className="chatBox">
-                <div className="chatLog" ref={chatLogRef}>
-                    {chatLog.map((chat, index) => (
-                        <div key={index} className={chat.sender}>
-                            <div className="chat">
-                                <p>{chat.message}</p>
-                            </div>
-                            <div className="label">
-                                <h5>{chat.sender}</h5>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="chatInput">
-                    <form onSubmit={handleFormSubmit} className="formChat">
-                        <input
-                            type="text"
-                            placeholder="Type your message here..."
-                            className="inputChat"
-                            value={newMessage}
-                            onChange={(e) => setNewMessage(e.target.value)}
-                        />
-                        <button type="submit">Send</button>
-                    </form>
-                </div>
+
+            {/* Chat window */}
+            <div className="chat-window-container">
+              <Channel>
+                <Window>
+                  <MessageList />
+                  <MessageInput />
+                </Window>
+              </Channel>
             </div>
-        </div>
-    );
+          </div>
+        </Chat>
+    </div>
+  );
 };
 
-export default ChatOp;
+export default App;

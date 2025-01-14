@@ -7,6 +7,7 @@
     padding: 0;
     position: relative;
     margin-left: 15%;
+    
 }
 
 @media (max-width: 768px) {
@@ -29,6 +30,14 @@
     padding: 30px;
     border-radius: 10px;
     
+}
+
+.orderTopInfo:hover{
+    cursor: pointer;
+}
+
+.feedback{
+    padding: 5px;
 }
 
 .settingOption:first-child{

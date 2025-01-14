@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/buyerProfile/buyerNav.css";
+import { useParams } from 'react-router-dom'
 
 //import for all icons and logos
 import logo from "../../assets/logo.png";
@@ -8,18 +9,16 @@ import home from "../../assets/Icons/Home.png";
 import analitics from "../../assets/Icons/analitics.png";
 import settings from "../../assets/Icons/settings.png";
 import chat from "../../assets/Icons/chat.png";
+import add from "../../assets/Icons/add.png";
+import SignUpBox from "../../components/profileOptions/signUpBox";
 
-const ProfileNav = ({ setPageOptions }) => {
-    const [activeButton, setActiveButton] = useState("home");
-
-    const handleButtonClick = (page) => {
-        setActiveButton(page);
-        setPageOptions(page);
-    };
+const ProfileNav = () => {
+    const { id } = useParams();
+    const userType = id;
 
     const handleLogoPress = () => {
         window.location.href = "/Fuel-Exchange/";
-    }
+        }
 
     return (
         <div className="profileNav">
@@ -28,8 +27,7 @@ const ProfileNav = ({ setPageOptions }) => {
                     <img 
                         src={profileIcon} 
                         alt="profIcon" 
-                        className={`icons ${activeButton === "profileInfo" ? "active" : ""}`}
-                        onClick={() => handleButtonClick("profile")}
+                        className={`icon`}
                     />
                     <img src={logo} alt="Logo" className="profileLogo" onClick={handleLogoPress}/>
                 </div>
@@ -37,28 +35,32 @@ const ProfileNav = ({ setPageOptions }) => {
                     <img
                         src={home}
                         alt="home"
-                        className={`icons ${activeButton === "home" ? "active" : ""}`}
-                        onClick={() => handleButtonClick("home")}
+                        className={`icon`}
                     />
                     <img
                         src={analitics}
                         alt="analitics"
-                        className={`icons ${activeButton === "analitics" ? "active" : ""}`}
-                        onClick={() => handleButtonClick("analitics")}
+                        className={`icon`}
                     />
                     <img
                         src={chat}
                         alt="chat"
-                        className={`icons ${activeButton === "chat" ? "active" : ""}`}
-                        onClick={() => handleButtonClick("chat")}
+                        className={`icon`}
                     />
                     <img
                         src={settings}
                         alt="settings"
-                        className={`icons ${activeButton === "settings" ? "active" : ""}`}
-                        onClick={() => handleButtonClick("settings")}
+                        className={`icon`}
                     />
+                    {userType === "seller" ? <img
+                        src={add}
+                        alt="add"
+                        className={`icon`}
+                    />: null}
                 </div>
+            </div>
+            <div className="boxDisplay">
+            <SignUpBox user={userType} />
             </div>
         </div>
     );
