@@ -72,7 +72,7 @@ const InfoOp = ({ Id }) => {
 
     useEffect(() => {
         fetchPosts();
-    }, []);
+    }, [activeID]);
 
     const handleClick = (event) => {
         setActiveID(event.currentTarget.id);
